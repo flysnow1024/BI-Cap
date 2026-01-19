@@ -67,3 +67,6 @@ python main-eeg.py --config configs/BI-Cap_eeg.yaml --subjects sub-01 --seed 0 -
 We acknowledge the contributions of the following datasets:
 * [A large and rich EEG dataset for modeling human visual object recognition](https://www.sciencedirect.com/science/article/pii/S1053811922008758)) [THINGS-EEG]
 * [THINGS-data, a multimodal collection of large-scale datasets for investigating object representations in human brain and behavior](https://elifesciences.org/articles/82580)](https://pubmed.ncbi.nlm.nih.gov/36847339) [THINGS-MEG]
+The inspiration for this code comes from previous excellent work:
+* [Bridging the Vision-Brain Gap with an Uncertainty-Aware Blur Prior](https://openreview.net/forum?id=38qCgXJ8L0](https://github.com/HaitaoWuTJU/Uncertainty-aware-Blur-Prior) [CVPR 2025]
+* [Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](https://github.com/LukunWuXDU/ATS) [AAAI 2026]
