@@ -9,6 +9,5 @@ To bridge these gap, we propose Brain-Inspired Capture (BI-Cap), a \textbf{Neuro
 * **CUDA**: 11.8
 * **Python**: 3.11.13
 ```bash
-    git clone [https://github.com/YourUsername/ATS-NB.git](https://github.com/YourUsername/ATS-NB.git)
-    cd ATS-NB
+pip install -r requirements.txt
 ```
