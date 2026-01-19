@@ -8,6 +8,7 @@ To bridge these gap, we propose Brain-Inspired Capture (BI-Cap), a \textbf{Neuro
 * **OS**: Linux
 * **CUDA**: 11.8
 * **Python**: 3.11.13
+* **Pytorch**: 2.4.1
 ```bash
 pip install -r requirements.txt
 ```
@@ -58,3 +59,11 @@ python ./data_preprocessing/process_meg.py
 python ./data_preprocessing/process_resize.py
 python ./data_preprocessing/Static_transformation.py
 ```
+### Train BI-Cap for THINGS-EEG2
+```bash
+python main-eeg.py --config configs/BI-Cap_eeg.yaml --subjects sub-01 --seed 0 --exp_setting intra-subject --brain_backbone Shared_Temporal_Attention_Encoder --vision_backbone RN50 --adaptor_backbone ShrinkAdapter --epoch 150 --lr 1e-4 --device cuda:0 --train_batch_size 32
+```
+### Acknowledgement
+We acknowledge the contributions of the following datasets:
+* [A large and rich EEG dataset for modeling human visual object recognition](https://www.sciencedirect.com/science/article/pii/S1053811922008758)) [THINGS-EEG]
+* [THINGS-data, a multimodal collection of large-scale datasets for investigating object representations in human brain and behavior](https://elifesciences.org/articles/82580) [THINGS-MEG]
