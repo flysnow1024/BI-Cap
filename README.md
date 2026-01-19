@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ### Datasets
 ```text
 ./data
-├── things_eeg
+├── things_eeg                                #Preprocessed THINGS-EEG2 dataset for train and test
 │   └── Preprocessed_data_250Hz_whiten
 │       ├── sub-01
 │       │   ├── train.npy
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 │       │   ├── train.npy
 │       │   └── test.npy
 │       └── ...
-├── things_meg
+├── things_meg                                 #Preprocessed THINGS-MEG dataset for train and test
 │   └── Preprocessed_data
 │       ├── sub-01
 │       │   ├── train.npy
@@ -32,6 +32,19 @@ pip install -r requirements.txt
 │       │   ├── train.npy
 │       │   └── test.npy
 │       └── ...
-└── images_set (images dataset for train and test)
-    └── test_images
-    └── training_images 
+└── images_set                                 #images dataset for train and test
+│    └── test_images
+│    └── training_images
+└── images_set_resize                          #Preprocessed images dataset for train and test
+│   └── test_images
+│   └── training_images
+└── Image_set_Gaussian                         #Image transformation dataset for train and test
+│   └── test_images
+│   └── training_images
+└── Image_set_LowRes                           #Image transformation dataset for train and test
+│   └── test_images
+│   └── training_images
+└── Image_set_Mosaic                           #Image transformation dataset for train and test
+│   └── test_images  
+│   └── training_images
+
