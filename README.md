@@ -15,12 +15,23 @@ pip install -r requirements.txt
 ```text
 ./data
 ├── things_eeg
-│   ├── sub-01
-│   │   ├── preprocessed_data.npy
-│   │   └── ...
-│   ├── sub-02
-│   └── ...
+│   └── Preprocessed_data_250Hz_whiten
+│       ├── sub-01
+│       │   ├── train.npy
+│       │   └── test.npy
+│       ├── sub-02
+│       │   ├── train.npy
+│       │   └── test.npy
+│       └── ...
 ├── things_meg
-│   └── ...
-└── images
-    └── ... (Reference images for CLIP)
+│   └── Preprocessed_data
+│       ├── sub-01
+│       │   ├── train.npy
+│       │   └── test.npy
+│       ├── sub-02
+│       │   ├── train.npy
+│       │   └── test.npy
+│       └── ...
+└── images_set (images dataset for train and test)
+    └── test_images
+    └── training_images 
