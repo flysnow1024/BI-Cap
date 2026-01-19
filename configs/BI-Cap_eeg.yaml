@@ -1,0 +1,57 @@
+timesteps: [0,250]
+blur_kernel_size: 75
+system_g: 3
+# determine the Feature Purification dimension
+downsample_dim: 768
+name: "${exp_setting}_BI-Cap_${brain_backbone}_${image_backbone}_${purification_backbone}"
+
+
+models:
+  brain:
+    target: "base.Brain_encoder.${brain_backbone}"
+    params:
+        c_num: 17
+        z_dim: ${downsample_dim}
+        timesteps: ${timesteps}
+  purification:
+    target: "base.Purification.${purification_backbone}"
+    params:
+      input_dim: ${z_dim}
+      output_dim: ${downsample_dim}
+  evidence:
+    target: "base.Evidence.${evidence_backbone}"
+    params:
+      downsample_dim: 1024
+
+data:
+  data_dir: data/things-eeg/Preprocessed_data # Update this path to your actual data directory
+  selected_ch: ['P7', 'P5', 'P3', 'P1','Pz', 'P2', 'P4', 'P6', 'P8', 'PO7', 'PO3', 'POz', 'PO4', 'PO8','O1', 'Oz', 'O2']
+  model_type: ${image_backbone}
+  train_batch_size: 32
+  val_batch_size: 200
+  test_batch_size: 200
+  uncertainty_aware: True
+
+  blur_type:
+    target: base.inpating_data.FoveaBlur
+    params:
+          h: 224
+          w: 224
+          blur_kernel_size: ${blur_kernel_size}
+          curve_type: exp
+          system_g:  ${system_g}
+  blur_type2:
+    target: base.inpating_data.DirectT
+    params: { }
+  matai_avg: True
+  matai_alpha: 0
+  train_avg: True
+  test_avg: True
+  timesteps: ${timesteps}
+
+train:
+  epoch: ${epoch}
+  optimizer: AdamW
+  lr: ${lr}
+
+save_dir: 'main_BI-Cap/eeg'
