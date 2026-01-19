@@ -47,4 +47,13 @@ pip install -r requirements.txt
 └── Image_set_Mosaic                           #Image transformation dataset for train and test
 │   └── test_images  
 │   └── training_images
-
+### Obtain preprocessed THINGS-MEG dataset and THINGS-MEG dataset
+```bash
+python ./data_preprocessing/process_eeg_whiten.py
+python ./data_preprocessing/process_meg.py
+```
+### Obtain Image transformation datasets
+```bash
+python ./data_preprocessing/process_resize.py
+python ./data_preprocessing/Static_transformation.py
+```
