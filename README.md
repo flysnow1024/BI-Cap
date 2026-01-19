@@ -11,3 +11,16 @@ To bridge these gap, we propose Brain-Inspired Capture (BI-Cap), a \textbf{Neuro
 ```bash
 pip install -r requirements.txt
 ```
+### Datasets
+```text
+./data
+├── things_eeg
+│   ├── sub-01
+│   │   ├── preprocessed_data.npy
+│   │   └── ...
+│   ├── sub-02
+│   └── ...
+├── things_meg
+│   └── ...
+└── images
+    └── ... (Reference images for CLIP)
